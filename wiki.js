@@ -3,7 +3,7 @@ const [find, create, textNode] = [el => document.querySelector(el), el => docume
 
 const finder = find('.searchButton').addEventListener('click', events => {
   events.preventDefault()
-  const inputText = find('.box').value.trim(); // space includes string and has length, trim them
+  const inputText = find('.box').value.trim(); // space included string and has length, trim them
   // console.log(inputText.length);
   result(inputText);
 })
