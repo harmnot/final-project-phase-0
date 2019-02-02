@@ -1,8 +1,8 @@
 const find = el => document.querySelector(el)
 const create = el => document.createElement(el)
 
-const lookingThem = find('.searchButton').addEventListener('click', (e) => {
-  e.preventDefault()
+const lookingThem = find('.searchButton').addEventListener('click', events => {
+  events.preventDefault()
   const inputText = find('.box').value.trim();
   // console.log(inputText.length);
   result(inputText);
@@ -13,11 +13,8 @@ const result = searching => {
   fetch(wikipedia)
     .then(resolve => resolve.json())
     .then(data => {
-      if(typeof data.continue === 'undefined'){
-        displayCantFound(find('.box').value)
-      } else {
-        console.log(data);
-      }
+      const somewords = find('.box').value;
+      typeof data.continue === 'undefined' ? displayCantFound(somewords) : console.log(data);
     })
     .catch((e) => alert('an error occurred', e))
 }
@@ -25,10 +22,10 @@ const result = searching => {
 const displayCantFound = theInputValue => {
   find('.result').innerHTML =
   `<div>
-      <h3> sorry can't found what you are looking ${theInputValue} </h3>
+      <h2> sorry can't found what you are looking ${theInputValue} </h2>
   </div>`
 }
 
 // const displayError = () => {
-//
+//   find('.result').innerHTML =
 // }
