@@ -15,7 +15,8 @@ const result = searching => {
     .then(resolve => resolve.json())
     .then(data => {
       const somewords = find('.box').value;
-      typeof data.continue === 'undefined' ? displayCantFound(somewords) : console.log(data);
+      const dataFile = data.query.search
+      typeof data.continue === 'undefined' ? displayCantFound(somewords) : displayData(dataFile);
     })
     .catch((e) => alert('an error occurred', e))
 }
@@ -23,7 +24,17 @@ const result = searching => {
 const displayCantFound = theInputValue => {
   find('.result').innerHTML =
   `<ul class='flex-content wrapIt'>
-      <li class='item'> <h1> Ooopss can't found ${theInputValue} </h1></li>
+      <li class='item'> <h1> Ooopss can't found: ${theInputValue} </h1></li>
       <li class='item'> <img class='pic' src='clown-sad.png'> </> </li>
    </ul>`;
+}
+
+const displayData = dataQuery => {
+  const putTextData = find('.result');
+  putTextData.innerHTML = '';
+  // console.log(dataQuery);
+  for(data of dataQuery){
+    const url = encodeURI(`https://en.wikipedia.org/wiki/${data.title}`);
+    console.log(data);
+  }
 }
