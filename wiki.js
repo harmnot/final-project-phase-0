@@ -1,5 +1,6 @@
 const find = el => document.querySelector(el)
 const create = el => document.createElement(el)
+const textNode = el => document.createTextNode(el)
 
 const lookingThem = find('.searchButton').addEventListener('click', events => {
   events.preventDefault()
@@ -21,11 +22,8 @@ const result = searching => {
 
 const displayCantFound = theInputValue => {
   find('.result').innerHTML =
-  `<div>
-      <h2> sorry can't found what you are looking ${theInputValue} </h2>
-  </div>`
+  `<ul class='flex-content wrapIt'>
+      <li class='item'> <h1> Ooopss can't found ${theInputValue} </h1></li>
+      <li class='item'> <img class='pic' src='clown-sad.png'> </> </li>
+   </ul>`;
 }
-
-// const displayError = () => {
-//   find('.result').innerHTML =
-// }

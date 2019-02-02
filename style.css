@@ -59,3 +59,35 @@ div#caption h1 {
   cursor: pointer;
   font-size: 20px;
 }
+.main-container {
+  background: #f4f4f4;
+  font-family: 'Karla', sans-serif;
+}
+.flex {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+}
+.wrap {
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.item {
+  padding: 5px;
+  margin: 8px;
+  line-height: 76px;
+  color: #000;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+}
+.pic {
+  width: 16%;
+}
