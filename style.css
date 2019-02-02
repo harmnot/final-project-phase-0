@@ -1,0 +1,17 @@
+#caption {
+  font-family: 'Karla', sans-serif;
+  color: #197e99;
+  font-size: 25px;
+}
+div#caption {
+  height: 10em;
+  position: relative;
+}
+div#caption h1 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
