@@ -3,6 +3,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+header {
+  padding: 10px;
+}
 #caption {
   font-family: 'Karla', sans-serif;
   color: #197e99;
@@ -59,30 +62,14 @@ div#caption h1 {
   cursor: pointer;
   font-size: 20px;
 }
-.main-container {
-  background: #f4f4f4;
-  font-family: 'Karla', sans-serif;
-}
-.flex {
-  display: flex;
-  padding: 0;
-  margin: 0;
+.cantfound {
   list-style: none;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -moz-flex;
-  display: -webkit-flex;
-  flex-direction: column;
-}
-.wrap {
-  flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
 }
 .item {
   padding: 5px;
   margin: 8px;
   line-height: 76px;
+  list-style: none;
   color: #197e99;
   font-weight: bold;
   font-size: 1em;
@@ -90,5 +77,44 @@ div#caption h1 {
   text-align: center;
 }
 .pic {
-  width: 16%;
+  width: 23%;
+}
+.flexx {
+  padding: 3px;
+  margin: 0;
+  list-style: none;
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+}
+.wrapp {
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.flex-item {
+  background: #f4f4f4;
+  padding: 5px;
+  width: 680px;
+  height: 170px;
+  margin: 8px;
+  line-height: 23px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.8em;
+  text-align: center;
+  font-family: 'Karla', sans-serif;
+}
+.block {
+  display: block;
+}
+.link {
+  font-size: 13px;
+}
+.flex-item > h3 {
+  margin-bottom: 30px;
 }

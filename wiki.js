@@ -23,27 +23,26 @@ const result = searching => {
 }
 
 const displayCantFound = theInputValue => {
-  find('.result').innerHTML =
-    `<ul class='flex-content wrapIt'>
+  find('.flexx').innerHTML =
+    `<ul class='cantfound'>
       <li class='item'> <h1> Ooopss can't found: ${theInputValue} </h1></li>
       <li class='item'> <img class='pic' src='clown-sad.png'> </li>
    </ul>`;
 }
 
 const displayData = dataQuery => {
-  const putTextData = find('.result');
+  const putTextData = find('.flexx');
   putTextData.innerHTML = '';
   // console.log(dataQuery);
   for (data of dataQuery) {
     console.log(data);
     const url = encodeURI(`https://en.wikipedia.org/wiki/${data.title}`);
     putTextData.insertAdjacentHTML('beforeend',
-    `<div class='datatext'>
-      <h3 class='textTittle'>
-        <a href='${url}' target=_blank>${data.title}</a>
-      </h3>
-      <p class='paragraf'>  ${data.snippet} </p>
-      <a href='${url}' target=_blank> <span> ${url} </span></a>
-    </div>`)
+    `<li class="flex-item">
+      <h3> <a href="${url}"> ${data.title}</a> </h3>
+      <span> ${data.snippet} </span> </br>
+      <a href="${url}" target=_blank class='link'> ${url}</a>
+    </li>`
+   )
   }
 }
