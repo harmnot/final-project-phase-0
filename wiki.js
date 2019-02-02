@@ -34,13 +34,13 @@ const displayData = dataQuery => {
   const putTextData = find('.flexx');
   putTextData.innerHTML = '';
   // console.log(dataQuery);
-  for (data of dataQuery) {
-    console.log(data);
-    const url = encodeURI(`https://en.wikipedia.org/wiki/${data.title}`);
+  for ({ns,title,pageid,size,wordcount,snippet,timestamp}of dataQuery) {
+    console.log(ns);
+    const url = encodeURI(`https://en.wikipedia.org/wiki/${title}`);
     putTextData.insertAdjacentHTML('beforeend',
     `<li class="flex-item">
-      <h3> <a href="${url}"> ${data.title}</a> </h3>
-      <span> ${data.snippet} </span> </br>
+      <h3> <a href="${url}"> ${title}</a> </h3>
+      <span> ${snippet} </span> </br>
       <a href="${url}" target=_blank class='link'> ${url}</a>
     </li>`
    )
