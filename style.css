@@ -64,6 +64,7 @@ div#caption h1 {
   font-family: 'Karla', sans-serif;
 }
 .flex {
+  display: flex;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -72,20 +73,20 @@ div#caption h1 {
   display: -ms-flexbox;
   display: -moz-flex;
   display: -webkit-flex;
-  display: flex;
   flex-direction: column;
 }
 .wrap {
-  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
 }
 .item {
   padding: 5px;
   margin: 8px;
   line-height: 76px;
-  color: #000;
+  color: #197e99;
   font-weight: bold;
   font-size: 1em;
+  font-family: 'Karla', sans-serif;
   text-align: center;
 }
 .pic {

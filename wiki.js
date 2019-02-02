@@ -1,6 +1,5 @@
-const find = el => document.querySelector(el)
-const create = el => document.createElement(el)
-const textNode = el => document.createTextNode(el)
+// functions for DOM,
+const [find, create, textNode] = [el => document.querySelector(el), el => document.createElement(el), el => document.createTextNode(el)];
 
 const lookingThem = find('.searchButton').addEventListener('click', events => {
   events.preventDefault()
@@ -15,15 +14,16 @@ const result = searching => {
     .then(resolve => resolve.json())
     .then(data => {
       const somewords = find('.box').value;
-      const dataFile = data.query.search
+      const dataFile = data.query.search;
+      //check input data if can't found
       typeof data.continue === 'undefined' ? displayCantFound(somewords) : displayData(dataFile);
     })
-    .catch((e) => alert('an error occurred', e))
+    .catch(() => alert('an error occurred'))
 }
 
 const displayCantFound = theInputValue => {
   find('.result').innerHTML =
-  `<ul class='flex-content wrapIt'>
+    `<ul class='flex-content wrapIt'>
       <li class='item'> <h1> Ooopss can't found: ${theInputValue} </h1></li>
       <li class='item'> <img class='pic' src='clown-sad.png'> </> </li>
    </ul>`;
@@ -33,7 +33,7 @@ const displayData = dataQuery => {
   const putTextData = find('.result');
   putTextData.innerHTML = '';
   // console.log(dataQuery);
-  for(data of dataQuery){
+  for (data of dataQuery) {
     const url = encodeURI(`https://en.wikipedia.org/wiki/${data.title}`);
     console.log(data);
   }
