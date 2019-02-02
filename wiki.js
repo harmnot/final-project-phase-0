@@ -30,18 +30,29 @@ const displayCantFound = theInputValue => {
    </ul>`;
 }
 
+
 const displayData = dataQuery => {
   const putTextData = find('.flexx');
   putTextData.innerHTML = '';
-  // console.log(dataQuery);
-  for ({ns,title,pageid,size,wordcount,snippet,timestamp} of dataQuery) {
+  for ({
+      ns,
+      title,
+      pageid,
+      size,
+      wordcount,
+      snippet,
+      timestamp
+    } of dataQuery) {
     const url = encodeURI(`https://en.wikipedia.org/wiki/${title}`);
     putTextData.insertAdjacentHTML('beforeend',
-    `<li class="flex-item">
-      <h3> <a href="${url}" class='link link2'> ${title}</a> </h3>
+      `<li class="flex-item">
+      <h3> <a href="${url}" class='link' id='link2'> ${title}</a> </h3>
       <span> ${snippet} </span> </br>
       <a href="${url}" target=_blank class='link'> ${url}</a>
-    </li>`
-   )
+    </li>`);
+    const odd = document.querySelectorAll('li:nth-child(odd)');
+    for (i of odd) {
+      i.style.background = 'rgb(233, 238, 242)'
+    }
   }
 }
