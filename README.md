@@ -1,4 +1,7 @@
 # Article finder based on Wikipedia
+
+open here : https://harmnot.github.io/final-project-phase-0/
+
 find your articles here
 <img width="1426" alt="screen shot 2019-02-03 at 08 44 33" src="https://user-images.githubusercontent.com/42674439/52171472-42bd8000-2790-11e9-9da6-98012bab3575.png">
 
