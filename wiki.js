@@ -52,7 +52,7 @@ const displayData = dataQuery => {
     </li>`);
     const odd = document.querySelectorAll('li:nth-child(odd)');
     for (i of odd) {
-      i.style.background = 'rgb(233, 238, 242)'
+      i.style.background = 'rgb(233, 238, 242)';
     }
   }
 }
